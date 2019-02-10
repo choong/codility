@@ -15,7 +15,7 @@ public class IterationsTest {
 
     @Test
     public void solution() {
-        int n = 10;
+        int n = 1041;
         log.info("" + iterations.solutions(n));
     }
 }
