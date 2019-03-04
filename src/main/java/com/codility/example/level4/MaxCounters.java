@@ -2,7 +2,9 @@ package com.codility.example.level4;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,13 +47,15 @@ public class MaxCounters {
         int result[] = new int[N];
         int max = 0;
         boolean flag = false;
-        Map<Integer, Integer> maxMap = null;
+        Map<Integer, Integer> maxMap = new HashMap<>();
+        ;
+        List<Integer> maxList = new ArrayList<>();
 
         for (int i = 0, len = A.length; i < len; i++) {
             if (N < A[i]) {
                 if (!flag) {
                     flag = true;
-                    maxMap = new HashMap<>();
+                    maxList.add(max);
                 }
 
             } else {
@@ -63,7 +67,10 @@ public class MaxCounters {
                     maxMap.put(index, 0);
                 } else result[index] += 1;
 
-                if (result[index] > max) max = result[index];
+
+                if (result[index] > max) {
+                    max = result[index];
+                }
 
             }
 
